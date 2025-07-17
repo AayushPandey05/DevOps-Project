@@ -10,7 +10,7 @@ Whenever I push changes to the **main** branch, the pipeline:
 
 This setup streamlines my workflow and enables me to ship new features faster without manual steps.
 
-**Pratyush Pandey**
+**Aayush Pandey**
 
 ---
 
@@ -56,5 +56,4 @@ This project demonstrates how CI/CD can transform my developer workflow, offerin
 - Build robust deployment systems  
 - Minimize errors and accelerate releases  
 
-✍️ **Author:** Pratyush Pandey  
-📬 Feel free to connect with me on LinkedIn or explore the repository on GitHub  
+✍️ **Author:** Aayush Pandey  
