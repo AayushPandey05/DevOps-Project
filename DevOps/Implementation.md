@@ -110,13 +110,13 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: 'ap-south-1'
 
       - name: Deploy to S3
         run: |
-          aws s3 sync DevOps/Dummy-portfolio-code/ s3://${{ secrets.mybucket-aayushpandey}} --delete
+          aws s3 sync DevOps/Dummy-portfolio-code/ s3://${{ secrets.AWS_s3_BUCKET}} --delete
 ```
 
 ---
