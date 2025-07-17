@@ -27,10 +27,9 @@ I automated the entire deployment process by integrating GitHub Actions with AWS
 - I wanted a stable, consistent production environment with zero friction.
 
 ✅ **Use Cases**  
-- Startup MVPs and production applications I maintain  
-- My personal portfolio and landing pages  
-- Technical documentation sites (Docusaurus, MkDocs, Gatsby) I contribute to  
-- Hackathons and live demos I present  
+- Personal portfolio or resume sites I host
+- Versioned project documentation sites I maintain 
+- Proof-of-concept and live demo deployments I run
 
 🧠 **Key Benefits**
 
