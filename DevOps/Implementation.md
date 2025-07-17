@@ -6,6 +6,7 @@
 - Attach the following policy to the user
 
 ![IAM Console – Create User](IMG/IAM_USER.png)
+![IAM Console – Create User](IMG/S3POLICY.png)
 
 ---
 
@@ -17,7 +18,7 @@
   - **Region:** Asia Pacific (Mumbai) (`ap-south-1`)
 - Leave other settings as default and click **Create bucket**
 
-![S3 Console – Create Bucket (Step 1)](IMG/S3_BUCKET.png)
+![S3 Console – Create Bucket (Step 1)](IMG/s3Bucket.png)
 
 ---
 
@@ -30,7 +31,7 @@
   - **Error document:** `index.html` (or `error.html`)
 - Click **Save changes**
 
-![S3 Console – Static Website Hosting](IMG/STATIC_HOSTING.png)
+![S3 Console – Static Website Hosting](IMG/staticwebhosting.png)
 
 ---
 
@@ -41,7 +42,7 @@
 - Confirm by checking the warning box
 - Click **Save changes**
 
-![S3 Console – Public Access Settings](IMG/PUBLIC_ACCESS.png)
+![S3 Console – Public Access Settings](IMG/publicBlocking.png)
 
 ---
 
@@ -52,7 +53,7 @@
   - **Bucket owner preferred**
 - Click **Save changes**
 
-![S3 Console – Object Ownership Settings](IMG/OBJECT_OWNERSHIP.png)
+![S3 Console – Object Ownership Settings](IMG/ownership.png)
 
 ---
 
@@ -65,7 +66,8 @@
   - **ARN:** `arn:aws:s3:::your-unique-bucket-name/*`
 - Generate the policy and attach it to your bucket
 
-![AWS Policy Generator – Policy Setup](IMG/POLICY_GENERATOR.png)
+![AWS Policy Generator – Policy Setup](IMG/policy_1.png)
+![AWS Policy Generator – Policy Setup](IMG/policy_2.png)
 
 ---
 
@@ -74,7 +76,7 @@
 - Go to **Security credentials** > **Create access key**
 - Note down the **Access Key ID** and **Secret Access Key**
 
-![IAM Console – Access Keys Creation](IMG/ACCESS_KEYS.png)
+![IAM Console – Access Keys Creation](IMG/Access_Key.png)
 
 ---
 
@@ -101,9 +103,9 @@ jobs:
 
       - name: Validate Files Exist
         run: |
-          test -f DevOps-Project/Dummy-portfolio-code/index.html || (echo "index.html missing" && exit 1)
-          test -f DevOps-Project/Dummy-portfolio-code/style.css || (echo "style.css missing" && exit 1)
-          test -f DevOps-Project/Dummy-portfolio-code/script.js || (echo "script.js missing" && exit 1)
+          test -f DevOps/Dummy-portfolio-code/index.html || (echo "index.html missing" && exit 1)
+          test -f DevOps/Dummy-portfolio-code/style.css || (echo "style.css missing" && exit 1)
+          test -f DevOps/Dummy-portfolio-code/script.js || (echo "script.js missing" && exit 1)
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -114,7 +116,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync DevOps-Project/Dummy-portfolio-code/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+          aws s3 sync DevOps/Dummy-portfolio-code/ s3://${{ secrets.mybucket-aayushpandey}} --delete
 ```
 
 ---
@@ -126,3 +128,7 @@ jobs:
   - `AWS_ACCESS_KEY_ID`
   - `AWS_SECRET_ACCESS_KEY`
   - `AWS_S3_BUCKET_NAME`
+ 
+![IAM Console – Access Keys Creation](IMG/github_1.png)
+
+![IAM Console – Access Keys Creation](IMG/added_key.png)
