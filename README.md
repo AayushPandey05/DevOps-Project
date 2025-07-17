@@ -1,6 +1,6 @@
 # 🚀 DevOps-Project
 
-Automate your static site deployment on AWS S3 (Stockholm, eu-north-1) with ease! This repository provisions an IAM user with the required `public-read` policies and integrates a GitHub Actions workflow to sync `index.html`, `style.css`, and `script.js` on every push to `main`.
+Automate your static site deployment on AWS S3 (Europe, Stockholm, eu-north-1) with ease! This repository provisions an IAM user with the required `public-read` policies and integrates a GitHub Actions workflow to sync `index.html`, `style.css`, and `script.js` on every push to `main`.
 
 ## 📖 Overview
 
